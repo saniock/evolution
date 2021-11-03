@@ -60,10 +60,7 @@
     }
 
     // Get Template name
-    $templatename = \EvolutionCMS\Models\User::find($content['template']);
-    if(!is_null($templatename)){
-        $templatename = $templatename->username;
-    }
+    $templatename = \EvolutionCMS\Models\SiteTemplate::find($content['template'])->templatename ?? 'Blank';
 
     // Set the item name for logger
     $_SESSION['itemname'] = $content['pagetitle'];
